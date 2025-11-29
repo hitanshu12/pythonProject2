@@ -1,0 +1,24 @@
+00000000,06-26-2011,4007024,040.33,Exercise & Fitness,Cardio Machine Accessories,Clarksville,Tennessee,credit
+00000001,05-26-2011,4006742,198.44,Exercise & Fitness,Weightlifting Gloves,Long Beach,California,credit
+00000002,06-01-2011,4009775,005.58,Exercise & Fitness,Weightlifting Machine Accessories,Anaheim,California,credit
+00000003,06-05-2011,4002199,198.19,Gymnastics,Gymnastics Rings,Milwaukee,Wisconsin,credit
+00000004,12-17-2011,4002613,098.81,Team Sports,Field Hockey,Nashville  ,Tennessee,credit
+00000005,02-14-2011,4007591,193.63,Outdoor Recreation,Camping & Backpacking & Hiking,Chicago,Illinois,credit
+00000006,10-28-2011,4002190,027.89,Puzzles,Jigsaw Puzzles,Charleston,South Carolina,credit
+00000007,07-14-2011,4002964,096.01,Outdoor Play Equipment,Sandboxes,Columbus,Ohio,credit
+00000008,01-17-2011,4007361,010.44,Winter Sports,Snowmobiling,Des Moines,Iowa,credit
+00000009,05-17-2011,4004798,152.46,Jumping,Bungee Jumping,St. Petersburg,Florida,credit
+00000010,05-29-2011,4004646,180.28,Outdoor Recreation,Archery,Reno,Nevada,credit
+00000011,06-18-2011,4008071,121.39,Outdoor Play Equipment,Swing Sets,Columbus,Ohio,credit
+00000012,02-08-2011,4002473,041.52,Indoor Games,Bowling,San Francisco,California,credit
+00000013,03-13-2011,4003268,107.80,Team Sports,Field Hockey,Honolulu  ,Hawaii,credit
+00000014,02-25-2011,4004613,036.81,Gymnastics,Vaulting Horses,Los Angeles,California,credit
+00000015,10-20-2011,4003179,137.64,Combat Sports,Fencing,Honolulu  ,Hawaii,credit
+00000016,05-28-2011,4009135,035.56,Exercise & Fitness,Free Weight Bars,Columbia,South Carolina,credit
+00000017,10-18-2011,4006679,075.55,Water Sports,Scuba Diving & Snorkeling,Omaha,Nebraska,credit
+00000018,11-18-2011,4002444,088.65,Team Sports,Baseball,Salt Lake City,Utah,credit
+00000019,08-28-2011,4008871,051.81,Water Sports,Life Jackets,Newark,New Jersey,credit
+00000020,06-29-2011,4001364,041.55,Exercise & Fitness,Weightlifting Belts,New Orleans,Louisiana,credit
+00000021,02-14-2011,4003144,045.79,Air Sports,Parachutes,New York,New York,credit
+00000841,11-07-2011,4001805,108.42,Water Sports,Life Jackets,Gresham,Oregon,credit
+00000842,05-28-2011,4009803,088.70,Games,Card Games,Centennial,Colorado,credit
