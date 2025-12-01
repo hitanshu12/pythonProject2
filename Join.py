@@ -142,3 +142,29 @@ resultDF = slctClmnDF.filter(col("dept_name").isNotNull()) .groupby("dept_name")
 # )
 resultDF.show()
 print()
+
+
+
+data4 = [
+    (1, "raj"),
+    (2, "ravi"),
+    (3, "sai"),
+    (5, "rani")
+]
+cust = spark.createDataFrame(data4, ["id", "name"])
+cust.show()
+data3 = [
+    (1, "mouse"),
+    (3, "mobile"),
+    (7, "laptop")
+]
+prod = spark.createDataFrame(data3, ["id", "product"])
+prod.show()
+innerj = cust.join(prod, ["id"], "inner")
+innerj.show()
+
+
+# take the left table and assigned all the id to the right table
+
+crossJoinDF = cust.crossJoin(prod)
+crossJoinDF.show()
