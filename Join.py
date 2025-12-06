@@ -160,11 +160,92 @@ data3 = [
 ]
 prod = spark.createDataFrame(data3, ["id", "product"])
 prod.show()
-innerj = cust.join(prod, ["id"], "inner")
-innerj.show()
 
+print("===============Inner Join==============")
+innerJoin = cust.join(prod, ["id"], "inner").orderBy("id")
+innerJoin.show()
+
+print()
+print("===============Left Join==============")
+leftJoin = cust.join(prod, ["id"], "left").orderBy("id")
+leftJoin.show()
+
+print()
+print("===============Right Join==============")
+rightJoin = cust.join(prod, ["id"], "right").orderBy("id")
+rightJoin.show()
+
+print()
+print("===============Full Join==============")
+fullJoin = cust.join(prod, ["id"], "full").orderBy("id")
+fullJoin.show()
+
+print()
+print("===============Left Anti Join==============")
+leftAntiJoin = cust.join(prod, ["id"], "leftanti").orderBy("id")
+leftAntiJoin.show()
+
+print()
+print("===============Left semi Join==============")
+leftSemiJoin = cust.join(prod, ["id"], "leftsemi").orderBy("id")
+leftSemiJoin.show()
 
 # take the left table and assigned all the id to the right table
 
 crossJoinDF = cust.crossJoin(prod)
 crossJoinDF.show()
+
+
+data5 = [
+    (1, "raj"),
+    (2, "ravi"),
+    (3, "sai"),
+    (5, "rani")
+]
+cust1 = spark.createDataFrame(data5, ["id", "name"])
+cust1.show()
+data6 = [
+    (1, "mouse"),
+    (3, "mobile"),
+    (7, "laptop")
+]
+prod1 = spark.createDataFrame(data6, ["cid", "product"])
+prod1.show()
+
+
+print("===============Inner Join==============")
+innerJoin = cust1.join(prod1, cust1["id"] == prod1["cid"], "inner").orderBy("id")
+innerJoin.show()
+
+print()
+print("===============Left Join==============")
+leftJoin = cust1.join(prod1, cust1["id"] == prod1["cid"], "left").orderBy("id")
+leftJoin.show()
+
+print()
+print("===============Right Join==============")
+rightJoin = cust1.join(prod1, cust1["id"] == prod1["cid"], "right").orderBy("id")
+rightJoin.show()
+
+print()
+print("===============Full Join==============")
+fullJoin = cust1.join(prod1, cust1["id"] == prod1["cid"], "full").orderBy("id")
+fullJoin.show()
+
+# remove cid column from full outer join
+from pyspark.sql.functions import *
+finalFullDF = (
+    fullJoin
+    .withColumn("id", expr("coalesce(id, cid)"))
+    .withColumn("id_case", expr("case when id is null then cid else id end"))
+    .drop("cid")
+)
+
+finalFullDF.show()
+
+
+
+
+
+
+

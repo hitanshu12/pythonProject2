@@ -115,7 +115,7 @@ dslDF.show()
 df.createOrReplaceTempView("dfSql")
 
 sqlDF = spark.sql(
-    """
+    """ 
         select 
             d1.from, 
             d1.to, 
