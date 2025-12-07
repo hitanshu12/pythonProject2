@@ -221,3 +221,48 @@ flatWithcolumn.printSchema()
 
 
 # Third Type :- Array
+
+data4 = """
+    {
+        "id": 2,
+        "trainer": "Sai",
+        "zeyostudents": ["Aarthi", "Arun"]
+    }
+"""
+
+rdd4 = sc.parallelize([data4])
+
+arrtype = (
+    spark.read.format("json")
+    .option("multiline", "true")
+    .json(rdd4)
+)
+arrtype.show()
+arrtype.printSchema()
+
+
+# Flatten the array type using selectExpr
+arrFlatDF = (
+    arrtype
+    .selectExpr(
+        "id",
+        "trainer",
+        "explode(zeyostudents) as zeyostudents"
+    )
+)
+arrFlatDF.show()
+arrFlatDF.printSchema()
+
+# Flatten the array type using withColumn
+print("using Explode")
+arrFlatDF = (
+    arrtype
+    .withColumn(
+        "zeyostudents",
+        # expr("explode(zeyostudents)")
+        explode(col("zeyostudents"))
+    )
+)
+arrFlatDF.show()
+arrFlatDF.printSchema()
+
