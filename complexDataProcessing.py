@@ -77,53 +77,14 @@ Write down PySpark code to :
 from pyspark.sql.functions import *
 from pyspark.sql.window import Window
 
-data = [
-    (1, "Math", 80, "2024-01-01"),
-    (1, "Science", 70, "2024-01-02"),
-    (1, "English", 90, "2024-01-03"),
-    (2, "Math", 60, "2024-01-01"),
-    (2, "Science", 75, "2024-01-02"),
-    (2, "English", 65, "2024-01-03"),
-    (3, "Math", 95, "2024-01-01"),
-    (3, "Science", 85, "2024-01-02"),
-    (3, "English", 80, "2024-01-03"),
-]
-
-columns = ["student_id", "subject", "marks", "exam_date"]
-
-df = spark.createDataFrame(data=data, schema= columns)
-df.show()
-df.printSchema()
-
-# Calculate Total and Average Marks per Student
-# Identify Best Subject per Student
-
-w = Window.partitionBy("student_id")
-
-df1 = (
-    df
-    .withColumn("avg_marks", round(avg("marks").over(w),2))
-    .withColumn("highest_marks", max("marks").over(w))
+complexDF = (
+    spark.read.format("json")
+    .option("multiline", "true")
+    .load(r"C:\Users\homiv\PySaprkProject\pythonProject2\data\complexJson.json")
 )
 
-df1.show()
-
-# Second-highest marks of each student
-
-shw = Window.partitionBy("student_id").orderBy(col("marks").desc())
-
-df2 = (
-    df
-    .withColumn(
-        "SecondHighestMarks",
-        rank().over(shw)
-    )
-    # .filter("SecondHighestMarks = 2")
-    .filter(col("SecondHighestMarks") == 2)
-)
-
-df2.drop("SecondHighestMarks", "exam_date", "subject").show()
-
+complexDF.show()
+complexDF.printSchema()
 
 
 
