@@ -57,7 +57,7 @@ print("SparkContext:", sc)
 Types of Data complexity
 """
 
-# Multiline Issue
+# First Type:- Multiline Issue
 
 data = """
     {
@@ -76,7 +76,7 @@ multilineDF = spark.read.option("multiline", "true").json(rdd)
 multilineDF.show()
 multilineDF.printSchema()
 
-# Struct
+# Second Type:- Struct
 data1 = """
 {
     "id": 2,
@@ -148,3 +148,76 @@ falttenDF1.printSchema()
 
 
 
+
+# nested struct
+
+data3 = """
+    {
+        "place": "Hydrabad",
+        "user": {
+            "name": "zeyo",
+            "address": {
+                "number": "40",
+                "street": "ashok nagar",
+                "pin": "400209"
+            }
+        }
+    }
+"""
+
+# create RDD
+
+rdd3 = sc.parallelize([data3])    # RDD Conversion
+
+# read the data
+complexArr = spark.read.option("multiline","true").json(rdd3)    # DataFrame Reads
+complexArr.show()                      # Second Priority
+complexArr.printSchema()               # First Priority
+
+
+# Flatten the Data
+
+flatDF = (
+    complexArr
+    .select(
+        "place",
+        "user.name",
+        "user.address.number",
+        "user.address.street",
+        "user.address.pin"
+    )
+)
+
+flatDF.show()
+flatDF.printSchema()
+
+
+# Flatten the data with withcolumn expression
+from pyspark.sql.functions import *
+
+flatWithcolumn = (
+    complexArr
+    .withColumn(
+        "name",
+        expr("user.name")
+    )
+    .withColumn(
+        "number",
+        expr("user.address.number")
+    )
+    .withColumn(
+        "street",
+        expr("user.address.street")
+    )
+    .withColumn(
+        "pin",
+        expr("user.address.pin")
+    )
+    .drop("user")
+)
+
+flatWithcolumn.show()
+flatWithcolumn.printSchema()
+
+
+# Third Type :- Array

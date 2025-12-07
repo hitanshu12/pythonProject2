@@ -100,31 +100,13 @@ df.printSchema()
 
 w = Window.partitionBy("student_id")
 
-df1 = (
+df = (
     df
     .withColumn("avg_marks", round(avg("marks").over(w),2))
     .withColumn("highest_marks", max("marks").over(w))
 )
 
-df1.show()
-
-# Second-highest marks of each student
-
-shw = Window.partitionBy("student_id").orderBy(col("marks").desc())
-
-df2 = (
-    df
-    .withColumn(
-        "SecondHighestMarks",
-        rank().over(shw)
-    )
-    # .filter("SecondHighestMarks = 2")
-    .filter(col("SecondHighestMarks") == 2)
-)
-
-df2.drop("SecondHighestMarks", "exam_date", "subject").show()
-
-
+df.show()
 
 
 
