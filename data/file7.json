@@ -1,0 +1,59 @@
+{
+  "company": "Tech Solutions",
+  "departments": [
+    {
+      "name": "Engineering",
+      "teams": [
+        {
+          "teamName": "Backend",
+          "members": [
+            {
+              "id": 101,
+              "name": "Alice",
+              "skills": ["Java", "Spring Boot", "SQL"],
+              "projects": [
+                {
+                  "projectId": "P001",
+                  "title": "Inventory System",
+                  "status": "Ongoing"
+                },
+                {
+                  "projectId": "P002",
+                  "title": "Payment Gateway",
+                  "status": "Completed"
+                }
+              ]
+            },
+            {
+              "id": 102,
+              "name": "Bob",
+              "skills": ["Node.js", "MongoDB", "AWS"],
+              "projects": []
+            }
+          ]
+        },
+        {
+          "teamName": "Frontend",
+          "members": [
+            {
+              "id": 103,
+              "name": "Charlie",
+              "skills": ["React", "TypeScript", "CSS"],
+              "projects": [
+                {
+                  "projectId": "P003",
+                  "title": "E-commerce UI",
+                  "status": "Ongoing"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HR",
+      "teams": []
+    }
+  ]
+}
