@@ -97,7 +97,7 @@ df2 = (
 )
 
 df2.show()
-
+print("======================================Solution 1========================================")
 finaldf = (
     df1.join(df2, ["id"], "full")
     .withColumn("email", coalesce(col("email"), col("email2")))
@@ -114,3 +114,41 @@ finaldf = (
 )
 
 finaldf.show()
+
+
+# alternative
+print("======================================Solution 2========================================")
+finaldf1 = (
+    df1.join(df2, ["id"], "full")
+    .withColumn("email", coalesce(col("email"), col("email2")))
+    .withColumn("name", coalesce(col("name"), col("name2")))
+    .withColumn("age", coalesce(col("age"), col("age2")))
+    .drop("email2", "name2", "age2")
+    .filter("email like '%@%'")
+    .withColumn("salary", when(col("salary").isNull(), 1000).otherwise(col("salary")))
+)
+
+finaldf1.show()
+
+
+print("======================================Solution 3========================================")
+
+df1 = (
+    df1
+    .withColumn("salary", lit(1000))
+)
+df1.show()
+
+unionDF = (
+    df1.unionAll(df2)
+    .filter(col("email").rlike('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'))
+)
+unionDF.show()
+
+
+
+
+
+
+
+
