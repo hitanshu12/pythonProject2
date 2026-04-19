@@ -1,0 +1,107 @@
+[
+  {
+    "age": 30,
+    "billing_address": {
+      "address": "123 MG Road",
+      "city": "Bangalore",
+      "postal_code": "560001",
+      "state": "Karnataka"
+    },
+    "date_of_birth": "1994-05-15",
+    "email_address": "john.doe@example.com",
+    "first_name": "John",
+    "height_cm": 175.5,
+    "is_alive": true,
+    "last_name": "Doe",
+    "shipping_address": {
+      "address": "456 Brigade Road",
+      "city": "Bangalore",
+      "postal_code": "560025",
+      "state": "Karnataka"
+    }
+  },
+  {
+    "age": 25,
+    "billing_address": {
+      "address": "78 Park Street",
+      "city": "Kolkata",
+      "postal_code": "700016",
+      "state": "West Bengal"
+    },
+    "date_of_birth": "2000-08-21",
+    "email_address": "jane.smith@example.com",
+    "first_name": "Jane",
+    "height_cm": 162.0,
+    "is_alive": true,
+    "last_name": "Smith",
+    "shipping_address": {
+      "address": "90 Lake Road",
+      "city": "Kolkata",
+      "postal_code": "700029",
+      "state": "West Bengal"
+    }
+  },
+  {
+    "age": 35,
+    "billing_address": {
+      "address": "78 Park Street",
+      "city": "Kolkata",
+      "postal_code": "700016",
+      "state": "West Bengal"
+    },
+    "date_of_birth": "1990-11-08",
+    "email_address": "jane.smith@example.com",
+    "first_name": "Jane",
+    "height_cm": 162.0,
+    "is_alive": true,
+    "last_name": "Smith",
+    "shipping_address": {
+      "address": "90 Lake Road",
+      "city": "Kolkata",
+      "postal_code": "700029",
+      "state": "West Bengal"
+    }
+  },
+  {
+    "age": 20,
+    "billing_address": {
+      "address": "78 Park Street",
+      "city": "Kolkata",
+      "postal_code": "700016",
+      "state": "West Bengal"
+    },
+    "date_of_birth": "2005-08-01",
+    "email_address": "jane.smith@example.com",
+    "first_name": "Jane",
+    "height_cm": 162.0,
+    "is_alive": true,
+    "last_name": "Smith",
+    "shipping_address": {
+      "address": "90 Lake Road",
+      "city": "Kolkata",
+      "postal_code": "700029",
+      "state": "West Bengal"
+    }
+  },
+  {
+    "age": 45,
+    "billing_address": {
+      "address": "78 Park Street",
+      "city": "Kolkata",
+      "postal_code": "700016",
+      "state": "West Bengal"
+    },
+    "date_of_birth": "1980-02-23",
+    "email_address": "jane.smith@example.com",
+    "first_name": "Jane",
+    "height_cm": 162.0,
+    "is_alive": true,
+    "last_name": "Smith",
+    "shipping_address": {
+      "address": "90 Lake Road",
+      "city": "Kolkata",
+      "postal_code": "700029",
+      "state": "West Bengal"
+    }
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "trainer": "sai",
+  "zeyoAddress" : {
+    "permanentAddress": "Hyderabad",
+    "temporaryAddress": "Chennai"
+  }
+}
